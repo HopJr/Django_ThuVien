@@ -116,7 +116,7 @@ class PhieuYeuCau(models.Model):
     soLuong = models.IntegerField(null= False)
     nhanVien = models.ForeignKey(NhanVien, on_delete= models.CASCADE)
     def __str__(self):
-        return self.TenSach
+        return self.ten_phieuYeuCau
 
     class Meta:
         db_table = 'PHIEUYEUCAU'
