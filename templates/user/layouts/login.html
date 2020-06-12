@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% include "../widgets/metadata.html" %}
+<!------ Include the above in your HEAD tag ---------->
+<link href="{% static 'user/css/login.css' %}" rel="stylesheet">    
+
+</head>
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+          <!-- Icon -->
+          <div class="fadeIn first">
+            <i class="pt-3 fas fa-user" id="icon"></i>
+            <h4 class="font-weight-bold">Đăng Nhập</h4>
+          </div>
+      
+          <!-- Login Form -->
+          <form method="POST">
+              {% csrf_token %}
+            <input type="text" name= "username" id="login" class="fadeIn second" placeholder="Tên đăng nhập...">
+            <input type="text" id="password" class="fadeIn third" name="password" placeholder="Mật khẩu...">
+            <input type="submit" class="fadeIn fourth" value="Login">
+          </form>
+          {% for message in message %}
+          <p id="message" class="">{{message}}</p>
+          {% endfor %}
+          <!-- Remind Passowrd -->
+          <div id="formFooter">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+          </div>
+      
+        </div>
+      </div>
+</body>
+</html>
+

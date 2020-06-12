@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'QLThuVien.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'thuvien',
+        'NAME': 'thuvien_dhkh',
         'HOST': '127.0.0.1',
         'POST': '3306',
         'USER':'root',

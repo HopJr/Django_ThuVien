@@ -370,7 +370,6 @@ img {
 }
 #aa-header .aa-header-bottom .aa-header-bottom-area {
   float: left;
-  display: inline;
   width: 100%;
 }
 #aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo {
@@ -378,20 +377,19 @@ img {
   margin-top: 4px;
 }
 #aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo a {
-  font-family: "Raleway", sans-serif;
-  font-size: 28px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
 }
 #aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo a:hover {  
   color: #333;
 }
 #aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo a > span {
-  display: inline-block;
   float: left;
-  font-size: 50px;
+  font-size: 25px;
 }
 #aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo a p {
-  display: inline-block;
   float: left;
+  font-size: 15px;
   font-weight: bold;
   margin-bottom: 0;
   margin-left: 5px;
@@ -399,7 +397,8 @@ img {
 }
 #aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo a p span {
   display: block;
-  font-size: 12px;
+  font-family: 'Anton', sans-serif;
+  font-size: 20px;
   font-weight: normal;
   letter-spacing: 1.5px;
   text-transform: uppercase;

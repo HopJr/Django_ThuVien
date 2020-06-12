@@ -90,11 +90,13 @@ class SinhVien(models.Model):
     NamSinh = models.DateField()
     diaChi = models.CharField(max_length = 100, null = False)
     khoa = models.CharField(max_length = 20, null= False)
+    username = models.CharField(max_length =20, null = False)
+    password = models.CharField (max_length = 20, null = False)
     nhanVien = models.ForeignKey(NhanVien, on_delete= models.CASCADE)
     def __str__(self):
-        return  self.student_name
+        return  self.ten_SinhVien
     class Meta:
-        db_table = "SINHVIEN"
+        db_table = "sinhvien"
         managed = True
         verbose_name = 'Sinh Viên'
         verbose_name_plural = 'Sinh Viên'
