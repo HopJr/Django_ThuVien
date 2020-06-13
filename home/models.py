@@ -54,7 +54,14 @@ class Sach(models.Model):
         managed = True
         verbose_name = 'Sách'
         verbose_name_plural = 'Sách'
-
+class TopSach(models.Model):
+    ma_TopSach = models.AutoField(primary_key = 'true')
+    sach = models.ForeignKey(Sach, on_delete=models.CASCADE)    
+    class Meta:
+        db_table = 'TopSach'
+        managed = True
+        verbose_name = 'Top Sách'
+        verbose_name_plural = 'Top Sách'
 class NhaCungCap(models.Model):
     ma_nhaCungCap = models.AutoField(primary_key = 'true')
     ten_nhaCungCap  = models.CharField(max_length = 50)

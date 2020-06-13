@@ -1,13 +1,19 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  {% include "../widgets/metadata.html" %}
-  <body> 
-    {% block content %}
-      
-    {% endblock %}
+{% include "../widgets/metadata.html" %}
 
-    <!-- jQuery library -->
-    {% include "../widgets/library.html" %}
-  </body>
+<body>
+  <!-- / menu -->
+  <!-- Start slider -->
+
+  <!-- / slider -->
+  <!-- Start Promo section -->
+  {% block content %}
+  {% endblock %}
+
+  <!-- jQuery library -->
+  {% include "../widgets/library.html" %}
+</body>
+
 </html>

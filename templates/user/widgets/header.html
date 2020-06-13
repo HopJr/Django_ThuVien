@@ -17,9 +17,7 @@
               <!-- / header top left -->
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
-                  {% for sinhvien in sinhVien %}
-                  <li><a href="account.html">{{ sinhvien.ten_SinhVien }}</a></li>
-                  {% endfor %}
+                  <li><a href="account.html">{% block username %} {% endblock %}</a></li>
                   <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
                   <li class="hidden-xs"><a href="home/logout/">Đăng Xuất</a></li>
                   <li><a href="home/login/" >Đăng Nhập</a></li>

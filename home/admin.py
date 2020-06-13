@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Sach, BaoCao, NhaCungCap, NhaXuatBan, NhanVien, PhieuYeuCau ,SinhVien, TheLoai,  TacGia, PhieuYeuCau
+from .models import Sach, BaoCao, NhaCungCap, NhaXuatBan, NhanVien, PhieuYeuCau ,SinhVien, TheLoai,  TacGia, PhieuYeuCau, TopSach
 # Register your models here.
 class AuthorAdmin(admin.ModelAdmin):
     list_display =['ma_TacGia', 'ten_Tacgia', 'ghiChu']
@@ -36,6 +36,7 @@ admin.site.register(SinhVien)
 admin.site.register(NhaCungCap)
 admin.site.register(BaoCao)
 admin.site.register(PhieuYeuCau)
+admin.site.register(TopSach)
 
 
 #admin header and title 
