@@ -118,12 +118,14 @@ class BaoCao(models.Model):
         verbose_name = 'Báo Cáo'
         verbose_name_plural = 'Báo Cáo'
 
+status =[(1,'Đang xử lý') , (2, 'Chưa trả'), (3,'Đã trả')]
 class PhieuYeuCau(models.Model):
     ma_PhieuYeuCau = models.AutoField(primary_key = 'true')
+    sinhvien = models.ForeignKey(SinhVien, on_delete= models.CASCADE)
     ten_phieuYeuCau = models.CharField(max_length = 50, null = False)
     TenSach = models.ForeignKey(Sach, on_delete= models.CASCADE)
     soLuong = models.IntegerField(null= False)
-    nhanVien = models.ForeignKey(NhanVien, on_delete= models.CASCADE)
+    trang_thai = models.CharField(max_length =10 , choices = status, default = 1)
     def __str__(self):
         return self.ten_phieuYeuCau
 

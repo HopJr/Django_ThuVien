@@ -16,16 +16,6 @@ def index(request):
 
 def login(request):
     if request.method == 'POST':
-            # username = request.POST.get('username')
-        # password =  request.POST.get('password')
-
-        # user = authenticate(request, username = username, password = password)
-
-        # if user is not None:
-        #     login(request, username)
-        #     return redirect('home')
-        # else:
-        #     messages.info(request, 'Tài khoản không hợp lệ!')   
         if SinhVien.objects.filter(username = request.POST['username'], password = request.POST['password']).exists():
             sinhVien = SinhVien.objects.get(username= request.POST['username'], password = request.POST['password'])
             theLoai = TheLoai.objects.all()
@@ -42,8 +32,9 @@ def login(request):
 def logOutUser(request):
     logout(request)
     return redirect('home')
+
 def theLoai(request, id):
-    theLoai = TheLoai.objects.all()
+    theLoai = TheLoai.objects.filter(ma_TheLoai = id)
     topSach = TopSach.objects.all()[0:1]
     topSachR = TopSach.objects.all()[1:5]
     tacgia = TacGia.objects.all();
@@ -51,3 +42,6 @@ def theLoai(request, id):
     sach = Sach.objects.filter(loaiSach = id)
     return render(request, 'user/layouts/category.html', {'theloai' : theLoai , 'topsach' : topSach, 'topR' : topSachR, 'tg' : tacgia, 'nxb' : nxb, 's' : sach})
 
+def yeuCau(request, id):
+    sach = Sach.objects.filter(ma_Sach = id)
+    return render(request, 'user/layouts/yeucau.html',{'s' : sach})
