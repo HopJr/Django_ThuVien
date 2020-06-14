@@ -34,8 +34,8 @@
               <ul class="aa-head-top-nav-right">
                 <li><a href="account.html">{{sinhVien.ten_SinhVien}}</a></li>
                 <li class="hidden-xs"><a href="cart.html">Sách đã mượn</a></li>
-                <li class="hidden-xs"><a href="">Đăng Xuất</a></li>
-                <li><a href="home/login/">Đăng Nhập</a></li>
+                <li class="hidden-xs"><a href="logout/">Đăng Xuất</a></li>
+                <li><a href="login/">Đăng Nhập</a></li>
               </ul>
             </div>
           </div>
@@ -52,7 +52,7 @@
             <!-- logo  -->
             <div class="aa-logo">
               <!-- Text based logo -->
-              <a href="index.html">
+              <a href="">
                 <span><img src="{% static 'user/img/logo.png' %} " width="5%"></span>
                 <p>THƯ VIỆN TRƯỜNG<span>ĐẠi HỌC KHOA HỌC HUẾ</span></p>
               </a>
@@ -92,11 +92,11 @@
         <div class="navbar-collapse collapse">
           <!-- Left nav -->
           <ul class="nav navbar-nav">
-            <li><a href="index.html">Trang Chủ</a></li>
+            <li><a href="">Trang Chủ</a></li>
             <li><a href="#">Thể Loại <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 {% for item in theloai %}
-                <li><a href="home/theloai/{{item.ma_TheLoai}}">{{item.ten_theLoai}}</a></li>
+                <li><a href="theloai/{{item.ma_TheLoai}}">{{item.ten_theLoai}}</a></li>
                 {% endfor %}
               </ul>
             </li>
@@ -156,7 +156,6 @@
           <!-- single slide item -->
 
           <!-- single slide item -->
-
         </ul>
       </div>
       <!-- slider navigation btn -->
@@ -167,180 +166,92 @@
     </div>
   </div>
 </section>
-<section id="aa-promo">
+<!--  -->
+<section id="book">
+  <div class="container">
+    <div class="row">
+      {% for item in s %}
+      <div class="card bg-danger" style="width:200px">
+        <img class="card-img-top" src="/media/{{item.anh}}" alt="Card image" style="width:100%">
+        <div class="card-body">
+          <h4 class="card-title">{{item.ten_Sach}}</h4>
+          <p class="card-text">Tác giả: {{item.tacGia}}</p>
+          <p class="card-text">Năm XB: {{item.namXuatBan}}</p>
+          <p class="card-text">Nhà XB: {{item.nhaXuatBan}}</p>
+          <a href="#" class="btn btn-primary text-center">Mượn Sách</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- / Testimonial -->
+
+<!-- Latest Blog -->
+
+<!-- / Latest Blog -->
+
+<!-- Client Brand -->
+<section id="aa-client-brand">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="aa-promo-area">
-          <div class="row">
-            <!-- banner section -->
+        <div class="aa-client-brand-area">
+          <ul class="aa-client-brand-slider">
+            <li><a href="#"><img src="{% static 'user/img/client-brand-java.png' %}" alt="java img"></a>
+            </li>
+            <li><a href="#"><img src="{% static 'user/img/client-brand-jquery.png' %}" alt="jquery img"></a>
+            </li>
+            <li><a href="#"><img src="{% static 'user/img/client-brand-html5.png' %}" alt="html5 img"></a>
+            </li>
+            <li><a href="#"><img src="{% static 'user/img/client-brand-css3.png' %}" alt="css3 img"></a>
+            </li>
+            <li><a href="#"><img src="{% static 'user/img/client-brand-wordpress.png' %}" alt="wordPress img"></a></li>
+            <li><a href="#"><img src="{% static 'user/img/client-brand-joomla.png' %}" alt="joomla img"></a>
+            </li>
+            <li><a href="#"><img src="{% static 'user/img/client-brand-java.png' %}" alt="java img"></a>
+            </li>
+            <li><a href="#"><img src="{% static 'user/img/client-brand-jquery.png' %}" alt="jquery img"></a>
+            </li>
+            <li><a href="#"><img src="{% static 'user/img/client-brand-html5.png' %}" alt="html5 img"></a>
+            </li>
+            <li><a href="#"><img src="{% static 'user/img/client-brand-css3.png' %}" alt="css3 img"></a>
+            </li>
+            <li><a href="#"><img src="{% static 'user/img/client-brand-wordpress.png' %}" alt="wordPress img"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / Client Brand -->
 
-            <!-- Support section -->
-            <section id="aa-support">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="aa-support-area">
-                      <!-- single support -->
-                      <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="aa-support-single">
-                          <span class="fa fa-truck"></span>
-                          <h4>FREE SHIPPING</h4>
-                          <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
-                        </div>
-                      </div>
-                      <!-- single support -->
-                      <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="aa-support-single">
-                          <span class="fa fa-clock-o"></span>
-                          <h4>30 DAYS MONEY BACK</h4>
-                          <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
-                        </div>
-                      </div>
-                      <!-- single support -->
-                      <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="aa-support-single">
-                          <span class="fa fa-phone"></span>
-                          <h4>SUPPORT 24/7</h4>
-                          <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <!-- / Support section -->
-            <!-- Testimonial -->
-            <section id="aa-testimonial">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="aa-testimonial-area">
-                      <ul class="aa-testimonial-slider">
-                        <!-- single slide -->
-                        <li>
-                          <div class="aa-testimonial-single">
-                            <img class="aa-testimonial-img" src="{% static 'user/img/testimonial-img-2.jpg' %}"
-                              alt="testimonial img">
-                            <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt distinctio omnis possimus,
-                              facere, quidem qui!consectetur adipisicing elit. Sunt distinctio omnis possimus, facere,
-                              quidem qui.</p>
-                            <div class="aa-testimonial-info">
-                              <p>Allison</p>
-                              <span>Designer</span>
-                              <a href="#">Dribble.com</a>
-                            </div>
-                          </div>
-                        </li>
-                        <!-- single slide -->
-                        <li>
-                          <div class="aa-testimonial-single">
-                            <img class="aa-testimonial-img" src="{% static 'user/img/testimonial-img-1.jpg' %}"
-                              alt="testimonial img">
-                            <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt distinctio omnis possimus,
-                              facere, quidem qui!consectetur adipisicing elit. Sunt distinctio omnis possimus, facere,
-                              quidem qui.</p>
-                            <div class="aa-testimonial-info">
-                              <p>KEVIN MEYER</p>
-                              <span>CEO</span>
-                              <a href="#">Alphabet</a>
-                            </div>
-                          </div>
-                        </li>
-                        <!-- single slide -->
-                        <li>
-                          <div class="aa-testimonial-single">
-                            <img class="aa-testimonial-img" src="{% static 'user/img/testimonial-img-3.jpg' %}"
-                              alt="testimonial img">
-                            <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt distinctio omnis possimus,
-                              facere, quidem qui!consectetur adipisicing elit. Sunt distinctio omnis possimus, facere,
-                              quidem qui.</p>
-                            <div class="aa-testimonial-info">
-                              <p>Luner</p>
-                              <span>COO</span>
-                              <a href="#">Kinatic Solution</a>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <!-- / Testimonial -->
+<!-- Subscribe section -->
+<section id="aa-subscribe">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="aa-subscribe-area">
+          <h3>Subscribe our newsletter </h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, velit!</p>
+          <form action="" class="aa-subscribe-form">
+            <input type="email" name="" id="" placeholder="Enter your Email">
+            <input type="submit" value="Subscribe">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / Subscribe section -->
 
-            <!-- Latest Blog -->
+<!-- footer -->
 
-            <!-- / Latest Blog -->
-
-            <!-- Client Brand -->
-            <section id="aa-client-brand">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="aa-client-brand-area">
-                      <ul class="aa-client-brand-slider">
-                        <li><a href="#"><img src="{% static 'user/img/client-brand-java.png' %}" alt="java img"></a>
-                        </li>
-                        <li><a href="#"><img src="{% static 'user/img/client-brand-jquery.png' %}" alt="jquery img"></a>
-                        </li>
-                        <li><a href="#"><img src="{% static 'user/img/client-brand-html5.png' %}" alt="html5 img"></a>
-                        </li>
-                        <li><a href="#"><img src="{% static 'user/img/client-brand-css3.png' %}" alt="css3 img"></a>
-                        </li>
-                        <li><a href="#"><img src="{% static 'user/img/client-brand-wordpress.png' %}"
-                              alt="wordPress img"></a></li>
-                        <li><a href="#"><img src="{% static 'user/img/client-brand-joomla.png' %}" alt="joomla img"></a>
-                        </li>
-                        <li><a href="#"><img src="{% static 'user/img/client-brand-java.png' %}" alt="java img"></a>
-                        </li>
-                        <li><a href="#"><img src="{% static 'user/img/client-brand-jquery.png' %}" alt="jquery img"></a>
-                        </li>
-                        <li><a href="#"><img src="{% static 'user/img/client-brand-html5.png' %}" alt="html5 img"></a>
-                        </li>
-                        <li><a href="#"><img src="{% static 'user/img/client-brand-css3.png' %}" alt="css3 img"></a>
-                        </li>
-                        <li><a href="#"><img src="{% static 'user/img/client-brand-wordpress.png' %}"
-                              alt="wordPress img"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <!-- / Client Brand -->
-
-            <!-- Subscribe section -->
-            <section id="aa-subscribe">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="aa-subscribe-area">
-                      <h3>Subscribe our newsletter </h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, velit!</p>
-                      <form action="" class="aa-subscribe-form">
-                        <input type="email" name="" id="" placeholder="Enter your Email">
-                        <input type="submit" value="Subscribe">
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <!-- / Subscribe section -->
-
-            <!-- footer -->
-
-            <!-- / footer -->
-            {% include "../widgets/footer.html" %}
-            <!-- footer-bottom -->
-            >
-            <!-- Login Modal -->
+<!-- / footer -->
+{% include "../widgets/footer.html" %}
+<!-- footer-bottom -->
+>
+<!-- Login Modal -->
 
 
-            {% endblock content %}
+{% endblock content %}

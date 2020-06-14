@@ -21,8 +21,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name = 'trang chu'),
-    path('home/login/' ,views.login, name= 'dang nhap'),
-    path('home/logout/', views.logOutUser, name = 'logout'),
-    path('home/theloai/<int:id>', views.theLoai, name = 'the loai')
+    path('', views.index, name = 'home'),
+    path('logout/', views.logOutUser, name = 'logout'),
+    path('login/' ,views.login, name= 'dang nhap'),
+    path('theloai/<int:id>', views.theLoai, name = 'the loai')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
